@@ -1,0 +1,54 @@
+@import "../../assets/scss/media";
+
+.scroll-to-top {
+    cursor: pointer;
+    position: fixed;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 0;
+    bottom: 0;
+    right: 0;
+    width: 58px;
+    height: 58px;
+    background-color: var(--white);
+    box-shadow: 0px 0px 20px 0px rgba(#333, 0.3);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: backToTop 0.7s ease forwards;
+    i {
+        font-size: 24px;
+        //font-weight: 500;
+    }
+
+    @include lg {
+        z-index: 3000;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+.scroll-hidden {
+    animation: backToBottom 0.7s ease forwards;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 0;
+}
+
+@keyframes backToTop {
+    from {
+        transform: translate(-25%, 100%);
+    }
+    to {
+        transform: translate(-25%, -25%);
+    }
+}
+
+@keyframes backToBottom {
+    from {
+        transform: translate(-25%, -25%);
+    }
+    to {
+        transform: translate(-25%, 100%);
+    }
+}

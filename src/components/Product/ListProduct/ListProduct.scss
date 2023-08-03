@@ -1,0 +1,24 @@
+@import "../../../assets/scss/media";
+
+.custom-list-product {
+    width: 100%;
+    padding: 25px 0px;
+    //background-color: burlywood;
+    .item-product {
+        .img-product {
+            height: 250px;
+            @include sm {
+                height: 330px;
+            }
+            @include md {
+                height: 275px;
+            }
+            @include lg {
+                height: 260px;
+            }
+            @include xl {
+                height: 330px;
+            }
+        }
+    }
+}

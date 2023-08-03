@@ -1,0 +1,181 @@
+@import "../../../../assets/scss/media";
+
+.filter-product {
+    width: 90%;
+    .filter-product-box {
+        display: flex;
+        align-items: center;
+        .list-categories {
+            display: flex;
+            align-items: center;
+            p.category-name {
+                margin-right: 2rem;
+                font-size: 0.875rem;
+                font-weight: 500;
+            }
+        }
+        .form-filter {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            @include lg {
+                flex-direction: row;
+            }
+            .filter-box {
+                margin-right: 15px;
+                p {
+                    font-size: 0.8rem;
+                }
+                .filter-by {
+                    user-select: none !important;
+                    cursor: pointer;
+                    // width: 8rem;
+                    padding: 0px 1rem;
+                    height: 2.5rem;
+                    border: 1px solid var(--border-light);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    i {
+                        margin-left: 8px;
+                        font-size: 0.7rem;
+                        color: #333;
+                    }
+                }
+
+                .list-option {
+                    // opacity: 0;
+                    transform: translateY(50%);
+                    transition: all 0.4s ease;
+                    position: absolute;
+                    z-index: 5;
+                    top: 135%;
+                    display: none;
+                    //left: 0;
+                    .box-list-option {
+                        position: relative;
+                        padding: 10px 15px;
+                        width: 13rem;
+                        background-color: var(--white);
+                        border: 1px solid var(--border-light);
+                        .item-option {
+                            user-select: none !important;
+                            transition: all 0.3s ease;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            cursor: pointer;
+                            padding: 12px 0px;
+                            font-size: 0.85rem;
+                            border-bottom: 1px solid var(--border-light);
+                            &:last-child {
+                                border-bottom: none;
+                            }
+                            .input-box {
+                                display: flex;
+                                align-items: center;
+                                input[type="checkbox"] {
+                                    position: relative;
+                                    width: 1rem;
+                                    height: 1rem;
+                                    cursor: pointer;
+                                    border: 1px solid var(--body-text);
+                                    //border-radius: 3px;
+                                    -webkit-appearance: none;
+                                    -moz-appearance: none;
+                                    appearance: none;
+                                    cursor: pointer;
+                                    &::after {
+                                        font-family: "Font Awesome 6 Free";
+                                        font-size: 0.7rem;
+                                        font-weight: 900;
+                                        position: absolute;
+                                        top: 50%;
+                                        left: 50%;
+                                        color: white;
+                                        //display: none;
+                                        content: "\f00c";
+                                        transform: translate(-50%, -50%);
+                                    }
+                                    &:checked {
+                                        background-color: #333;
+                                        border: #333;
+                                    }
+                                }
+                                label {
+                                    font-size: 0.85rem;
+                                    margin-bottom: 0px;
+                                    margin-left: 10px;
+                                    cursor: pointer;
+                                }
+                            }
+
+                            p.stock {
+                                font-size: 0.75rem;
+                                color: var(--body-text);
+                            }
+                            &:hover {
+                                color: var(--primary);
+                            }
+                        }
+
+                        &::before {
+                            position: absolute;
+                            content: "";
+                            z-index: 6;
+                            top: 1%;
+                            left: 10%;
+                            transform: translate(-50%, -50%);
+                            width: 13px;
+                            height: 13px;
+                            border: 1px solid var(--border-light);
+                            background-color: var(--white);
+                            rotate: 45deg;
+                            border-right: 0;
+                            border-bottom: 0;
+                        }
+                    }
+                }
+                .list-option.active {
+                    opacity: 1;
+                    display: block;
+                    transform: translateY(0);
+                }
+            }
+        }
+    }
+    .list-tag {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        .item-tag {
+            margin: 1.5rem 0px 0.5rem 0px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+            padding: 0.5rem 0.65rem;
+            background-color: var(--border-light);
+            p {
+                margin-right: 10px;
+                font-size: 0.75rem;
+                //padding: 1rem 0.5rem;
+            }
+            i {
+                font-size: 0.7rem;
+            }
+            &:hover {
+                color: var(--primary);
+            }
+        }
+        p.clean-all {
+            margin: 1.5rem 0px 0.5rem 0px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+    }
+}

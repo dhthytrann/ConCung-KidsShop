@@ -1,0 +1,169 @@
+@import "../../../assets/scss/media";
+
+.home-page {
+    ul {
+        padding-left: 0px;
+    }
+
+    .main-title {
+        color: #222;
+        position: relative;
+        text-align: center;
+        b {
+            font-size: 170%;
+            opacity: 0.08;
+        }
+        em {
+            position: absolute;
+            font-style: inherit;
+            font-size: 1.65rem;
+            font-weight: 700;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .advertising-banner {
+        // margin: 5rem 0px;
+    }
+
+    .blog {
+        .list-news {
+            .item-news {
+                cursor: pointer;
+                transition: all 0.3s ease;
+                .img-banner {
+                    transition: all 0.3s ease;
+                    border-radius: 3px;
+                    overflow: hidden;
+                    img {
+                        transition: all 0.3s ease;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .content {
+                    margin-top: 1.1rem;
+                    .author {
+                        display: flex;
+
+                        span {
+                            font-size: 0.85rem;
+                            color: var(--body-text);
+                            margin-right: 5px;
+                        }
+                        p {
+                            font-size: 0.85rem;
+                            color: var(--title-text);
+                            font-weight: 600;
+                            margin-right: 5px;
+                        }
+                    }
+                    .title {
+                        font-weight: 700;
+                    }
+                }
+                .btn-read-more {
+                    margin-top: 10px;
+                    display: flex;
+                    align-items: center;
+                    p {
+                        font-size: 0.875rem;
+                        margin-right: 10px;
+                        font-weight: 500;
+                    }
+                    i {
+                        color: #333;
+                    }
+                }
+                &:hover {
+                    .img-banner {
+                        img {
+                            transform: scale(1.2);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .our-client {
+        .list-our-client {
+            .item {
+                cursor: pointer;
+                transition: all 0.3s ease;
+                .img-banner {
+                    transition: all 0.3s ease;
+                    border-radius: 3px;
+                    overflow: hidden;
+                    img {
+                        transition: all 0.3s ease;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.list-introduce {
+    margin: 25px auto 50px auto;
+    padding: 30px 0px 10px 0px;
+    //border: 1px solid #e1e1e1;
+    //border-radius: 2px;
+}
+
+.border-margin {
+    margin: 40px 0px;
+}
+
+.tab-titles {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0px;
+    border-bottom: 1px solid #e1e1e1;
+    p.title {
+        padding: 0px 5px;
+        width: fit-content;
+        position: relative;
+        font-size: 20px;
+        font-weight: 700;
+        color: #333;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0px;
+            width: 100%;
+            height: 3.5px;
+            background-color: var(--primary);
+        }
+    }
+    .view-all {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding: 0px 5px;
+        transition: all 0.3s ease;
+        color: var(--title-text);
+        p {
+            margin-right: 7px;
+            font-weight: 700;
+            font-size: 14px;
+        }
+        i {
+            font-weight: 500;
+            font-size: 16px;
+        }
+        &:hover {
+            color: var(--primary);
+        }
+    }
+}
+.list-instagram{
+    padding: 25px 0px;
+}

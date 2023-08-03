@@ -1,0 +1,220 @@
+@import "../../../../../assets/scss/media";
+
+.reviews {
+    padding: 40px 0px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    .rate {
+        width: 100%;
+        margin-bottom: 30px;
+        .average-rating {
+            display: flex;
+            align-items: center;
+            p.avg-rating {
+                margin-right: 10px;
+                font-weight: 800;
+                font-size: 50px;
+                color: var(--primary);
+            }
+            .des {
+                p {
+                    font-size: 14px;
+                }
+                .star {
+                    display: flex;
+                    align-items: center;
+                    i {
+                        font-size: 11px;
+                    }
+                    p.number-star {
+                        margin-left: 10px;
+                        font-size: 11px;
+                        color: var(--body-text);
+                        transform: translateY(10%);
+                    }
+                }
+            }
+        }
+        .progress-bar-list {
+            width: 100%;
+            .item-progress-bar {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                margin-bottom: 5px;
+                &:last-child {
+                    margin-bottom: 0px;
+                }
+                //width: 30%;
+                .star {
+                    margin-right: 20px;
+                    i {
+                        font-size: 13px;
+                    }
+                }
+                .progress-bar-rv {
+                    width: 70%;
+                    display: flex;
+                    align-items: center;
+                    .progress-rv {
+                        position: relative;
+                        overflow: hidden;
+                        width: 85%;
+                        height: 9px;
+                        background-color: #eee;
+                        border-radius: 7px;
+                        margin-right: 10px;
+                        &::after {
+                            content: "";
+                            height: 100%;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            background-color: #999;
+                        }
+                    }
+
+                    @for $i from 1 through 100 {
+                        .progress-rv.w-#{$i} {
+                            &::after {
+                                width: percentage($i/ 100);
+                            }
+                        }
+                    }
+
+                    p.percent {
+                        width: 15%;
+                        color: var(--body-text);
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+        .btn-submit-comment {
+            cursor: pointer;
+            position: relative;
+            width: 180px;
+            height: 50px;
+            background-color: #333;
+            border-radius: 2px;
+            p {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                transform: translate(-50%, -50%);
+                color: var(--white);
+                font-weight: 500;
+                text-align: center;
+            }
+        }
+    }
+    .review-content {
+        width: 100%;
+        .filter-review {
+            padding: 20px 0px;
+            display: flex;
+            align-items: center;
+            p {
+                cursor: pointer;
+                margin-right: 30px;
+                font-weight: 700;
+                &:first-child {
+                    color: var(--primary);
+                }
+            }
+        }
+        .list-comment {
+            width: 100%;
+            .item-comment {
+                width: 100%;
+                padding: 40px 0px;
+                border-bottom: 1px solid #e1e1e1;
+                &:last-child {
+                    border-bottom: none;
+                }
+                &:first-child {
+                    border-top: 1px solid #e1e1e1;
+                }
+                .comment-info {
+                    width: 100%;
+                    display: flex;
+                    .img-avt {
+                        margin-right: 15px;
+                        width: 80px;
+                        height: 80px;
+                        max-width: 80px;
+                        min-width: 80px;
+                        overflow: hidden;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                    .comment-content {
+                        .rate-comment {
+                            i {
+                                font-size: 13px;
+                            }
+                        }
+                        .user-info {
+                            display: flex;
+                            align-items: center;
+                            p {
+                                margin-right: 5px;
+                                color: var(--body-text);
+                            }
+                            .user-name {
+                                font-weight: 600;
+                                color: #222;
+                            }
+                        }
+                        .comment-des {
+                        }
+                    }
+                }
+                .interaction {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    .like,
+                    .dislike {
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        transition: all 0.3s ease;
+                        i {
+                            font-size: 19px;
+                            margin-right: 10px;
+                            transition: all 0.3s ease;
+                        }
+                        p {
+                            font-weight: 600;
+                            transition: all 0.3s ease;
+                            font-size: 13px;
+                        }
+                        &:hover {
+                            i,
+                            p {
+                                color: var(--primary);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include lg{
+        flex-direction: row;
+        justify-content: space-between;
+        .rate{
+            width: 40%;
+            margin-bottom: 0px;
+        }
+        .review-content{
+            width: 60%;
+        }
+    }
+}

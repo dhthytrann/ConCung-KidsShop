@@ -1,0 +1,97 @@
+@import "../../../../assets/scss/media";
+
+.top-banner {
+    // > [class*="item-banner-"] {
+    background-color: brown;
+    // }
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    @include xxl {
+        height: 80vh;
+    }
+    .item-banner {
+        height: 100%;
+    }
+    .shape-bottom {
+        position: absolute;
+        z-index: 999;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .control-dots {
+        //padding: 0px 5rem;
+        position: absolute;
+        bottom: 0%;
+        right: 50%;
+        transform: translate(50%, -0%);
+        z-index: 998;
+        @include md {
+            bottom: 0%;
+            right: 0%;
+
+            transform: translate(-0%, -0%);
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            //flex-direction: column;
+            li.item-dot {
+                cursor: pointer;
+                width: 6rem;
+                height: 4rem;
+                overflow: hidden;
+                object-fit: cover;
+                border: 3px solid var(--dark-secondary);
+                transition: all 0.3s ease;
+                video,
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                @include md {
+                    width: 9rem;
+                    height: 6rem;
+                }
+            }
+            .item-dot.selected {
+                border: 3px solid var(--white);
+            }
+        }
+    }
+}
+
+// @keyframes animateBackInTop {
+//     from {
+//         transform: translate(0%, -100%);
+//         opacity: 0;
+//     }
+//     to {
+//         transform: translate(0%, 0);
+//         opacity: 1;
+//     }
+// }
+
+// @keyframes animateBackInLeft {
+//     from {
+//         transform: translate(-100%, 0%);
+//         opacity: 0;
+//     }
+//     to {
+//         transform: translate(0%, 0);
+//         opacity: 1;
+//     }
+// }
+// @keyframes animateZoomOut {
+//     from {
+//         transform: scale(1.1);
+//     }
+//     to {
+//         transform: scale(1);
+//     }
+// }

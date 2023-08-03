@@ -1,0 +1,152 @@
+@import "../../../../../assets/scss/media";
+
+.description-tab {
+    padding: 40px 0px;
+    p.title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .description-content {
+        margin-bottom: 40px;
+        line-height: 1.9;
+        width: 100%;
+        p {
+            font-size: 14px;
+            color: var(--body-text);
+        }
+        p.title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #222222;
+        }
+        .features {
+            .features-content {
+                .list-content {
+                    .item {
+                        display: flex;
+                        align-items: center;
+                        i {
+                            font-size: 13px;
+                            margin-right: 10px;
+                            font-weight: 900;
+                        }
+                    }
+                }
+            }
+        }
+        .specifications {
+            table {
+                tbody {
+                    tr {
+                        height: 63px;
+                        border-bottom: 1px solid #e1e1e1;
+                        &:last-child{
+                            border-bottom: none;
+                        }
+                    }
+                    td {
+                        color: var(--body-text);
+                    }
+                }
+            }
+        }
+    }
+    .description-video {
+        width: 100%;
+        .video-description {
+            position: relative;
+            width: 100%;
+            .banner-video {
+                width: 100%;
+                overflow: hidden;
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            .btn-play {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 80px;
+                height: 80px;
+                background-color: rgba(#222222, 0.8);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0px 0px 20px 0px rgba(#333, 0.3);
+                transition: all 0.4s ease;
+                i {
+                    transition: all 0.5s ease;
+                    text-align: center;
+                    color: var(--white);
+                    font-size: 22px;
+                }
+            }
+        }
+        .service {
+            // display: flex;
+            // align-items: center;
+            // justify-content: space-between;
+            @include lg {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .item {
+                    width: 50%;
+                    margin-bottom: 0px;
+                }
+            }
+            .item {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                margin-bottom: 15px;
+                .icon {
+                    position: relative;
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 50%;
+                    border: 1px solid #e1e1e1;
+                    margin-right: 10px;
+                    i {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        font-size: 20px;
+                        font-weight: 600;
+                        color: #333;
+                    }
+                }
+                .content {
+                    p {
+                        color: var(--body-text);
+                        font-size: 13px;
+                    }
+                    p.subject {
+                        color: #222222;
+                        font-size: 15px;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+    @include md {
+        flex-direction: row;
+        .description-content {
+            margin-bottom: 0px;
+            width: 50%;
+        }
+        .description-video {
+            width: 45%;
+        }
+    }
+}

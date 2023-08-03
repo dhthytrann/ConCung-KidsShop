@@ -1,0 +1,150 @@
+@import "../../../assets/scss/media";
+.item-banner-02 {
+    //animation: animateBackInLeft 1.5s .5s forwards;
+    //animation: animateBackInLeft 0.5s forwards;
+    animation: animateZoomOut 4s 0s forwards;
+    position: relative;
+    z-index: 998;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    object-fit: cover;
+    background-color: #222;
+    img {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .container {
+        width: 100%;
+        height: 100%;
+        // background-color: brown;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: end;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        .content {
+            padding: 0px 20px;
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            right: 0%;
+            transform: translate(0%, -50%);
+            line-height: 1.05;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            p.categories {
+                color: #222;
+                font-size: 25px;
+                font-weight: 600;
+                animation: animateBackInTop 1.5s 0.7s forwards;
+                opacity: 0;
+            }
+            p.subject {
+                //width: 28rem;
+                display: flex;
+                flex-direction: column;
+                animation: animateBackInTop 1.5s 0.6s forwards;
+                opacity: 0;
+                .custom-subject {
+                    font-size: 50px;
+                    color: var(--white);
+                    font-weight: 600;
+                }
+                span {
+                    font-size: 64px;
+                    color: var(--primary);
+                    font-weight: 700;
+                }
+            }
+            p.event {
+                color: var(--white);
+                // color: var(--title-text);
+                font-size: 14px;
+                font-weight: 500;
+                animation: animateBackInTop 1.5s 0.5s forwards;
+                opacity: 0;
+            }
+            .btn-shop-now {
+                margin-top: 35px;
+                color: var(--white);
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #222;
+                border-radius: 3px;
+                width: 150px;
+                height: 50px;
+                transition: all 0.3s ease;
+                animation: animateBackInLeft 1.5s 1s forwards;
+                cursor: pointer;
+                opacity: 0;
+                p {
+                    @include sm {
+                        font-size: 14px;
+                    }
+                    font-size: 12px;
+                }
+                &:hover {
+                    background-color: rgba(#222, 0.7);
+                }
+            }
+        }
+    }
+    @include sm {
+        .container {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            .content {
+                p.categories {
+                    font-size: 24px;
+                    color: #222;
+                }
+                p.subject {
+                    display: flex;
+                    flex-direction: column;
+                    color: #222;
+                    .custom-subject {
+                        color: #222;
+                        font-size: 38px;
+                    }
+                    span {
+                        font-size: 95px;
+                    }
+                }
+                p.event {
+                    color: var(--title-text);
+                    font-size: 16px;
+                }
+                .btn-shop-now {
+                    width: 190px;
+                    height: 60px;
+                }
+            }
+        }
+    }
+
+    // .blur {
+    //     position: absolute;
+    //     z-index: 1;
+    //     top: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     background-image: linear-gradient(0deg, transparent, rgba(0, 0, 0, 0.7));
+    //     //background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    // }
+}

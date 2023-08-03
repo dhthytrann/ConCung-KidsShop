@@ -1,0 +1,78 @@
+@import "../../../../assets/scss/media";
+
+.description-product {
+    margin-top: 50px;
+    font-size: 14px;
+    user-select: none;
+    .menu-tab {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #e1e1e1;
+        padding: 15px 0px;
+        .item {
+            cursor: pointer;
+            position: relative;
+            // border-bottom: 1px solid #e1e1e1;
+            // padding: 18px 0px;
+            width: 25%;
+            text-align: center;
+            transition: all 0.3s ease;
+            p {
+                font-size: 15px;
+                font-weight: 700;
+                @include md {
+                    font-size: 16px;
+                }
+                @include lg {
+                    font-size: 17px;
+                }
+                @include xl {
+                    font-size: 18px;
+                }
+            }
+            &::after {
+                content: "";
+                width: 75%;
+                height: 2px;
+                background-color: var(--primary);
+                position: absolute;
+                bottom: -15px;
+                left: 50%;
+                transform: translateX(-50%) scale(0);
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+            &:hover {
+                &::after {
+                    opacity: 1;
+                    transform: translateX(-50%) scale(1);
+                }
+            }
+        }
+        .item.active {
+            &::after {
+                opacity: 1;
+                transform: translateX(-50%) scale(1);
+            }
+        }
+    }
+}
+
+.description-tab,
+.additional-information,
+.size-guide,
+.reviews {
+    animation: animateBackInBottom 0.65s forwards;
+}
+
+@keyframes animateBackInBottom {
+    from {
+        transform: translateY(20%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}

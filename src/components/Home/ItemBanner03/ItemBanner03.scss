@@ -1,0 +1,122 @@
+@import "../../../assets/scss/media";
+
+.item-banner-03 {
+    //animation: animateBackInLeft 1.5s .5s forwards;
+    //animation: animateBackInLeft 0.5s forwards;
+    animation: animateZoomOut 4s 0s forwards;
+    position: relative;
+    z-index: 998;
+    height: 100vh;
+    overflow: hidden;
+    object-fit: cover;
+    background-color: #222;
+    video {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .blur {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgba(43, 151, 223, 0.3);
+        z-index: 2;
+    }
+    .container {
+        width: 100%;
+        height: 100%;
+        .content {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            padding: 0px 20px;
+            z-index: 3;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            //background-color: antiquewhite;
+
+            p.categories {
+                color: var(--white);
+                font-size: 1.2rem;
+                font-weight: 600;
+                animation: animateBackInTop 1.5s 0.7s forwards;
+                opacity: 0;
+            }
+            p.subject {
+                @include xs {
+                    line-height: 1;
+                }
+                color: var(--white);
+                font-size: 3rem;
+                font-weight: 800;
+                animation: animateBackInTop 1.5s 0.6s forwards;
+                opacity: 0;
+            }
+            p.event {
+                color: var(--white);
+                width: 90%;
+                font-size: 0.8rem;
+                font-weight: 300;
+                animation: animateBackInTop 1.5s 0.5s forwards;
+                opacity: 0;
+            }
+            .btn-shop-now {
+                margin-top: 10px;
+                color: var(--white);
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #222;
+                border-radius: 3px;
+                width: 150px;
+                height: 50px;
+                transition: all 0.3s ease;
+                animation: animateBackInLeft 1.5s 1s forwards;
+                cursor: pointer;
+                opacity: 0;
+                p {
+                    @include sm {
+                        font-size: 14px;
+                    }
+                    font-size: 12px;
+                }
+                &:hover {
+                    background-color: rgba(#222, 0.7);
+                }
+            }
+        }
+    }
+    @include sm {
+        .container {
+            .content {
+                p.categories {
+                    font-size: 1.9rem;
+                }
+                p.subject {
+                    font-size: 3.7rem;
+                }
+                p.event {
+                    width: 65%;
+                    font-size: 1.15rem;
+                }
+                .btn-shop-now {
+                    width: 190px;
+                    height: 60px;
+                }
+            }
+        }
+    }
+}

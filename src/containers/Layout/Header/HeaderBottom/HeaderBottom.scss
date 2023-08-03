@@ -1,0 +1,52 @@
+.header-bottom {
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--white);
+    overflow: hidden;
+    background-color: var(--title-text);
+    border-radius: 2px;
+    .menu-tab-left {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        .browse-categories {
+            cursor: pointer;
+            width: 150px;
+            height: 100%;
+            margin-right: 30px;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .subject {
+                font-size: 14px;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                color: var(--white);
+                i {
+                    font-size: 20px;
+                }
+            }
+        }
+        .menu {
+        }
+    }
+
+    .deal-menu {
+        display: flex;
+        align-items: center;
+        padding-right: 20px;
+        .item-deal {
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            &:hover {
+                color: var(--primary);
+            }
+        }
+    }
+}

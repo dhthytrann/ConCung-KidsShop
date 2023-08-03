@@ -1,0 +1,29 @@
+.item-introduce {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: var(--body-text);
+    .icon {
+        margin-right: 20px;
+        position: relative;
+        width: 54px;
+        height: 54px;
+        border-radius: 50%;
+        color: var(--white);
+        i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 23px;
+            //font-weight: 500;
+        }
+    }
+    .content {
+        p.subject {
+            color: var(--title-text);
+            font-size: 15px;
+            font-weight: 600;
+        }
+    }
+}

@@ -1,0 +1,18 @@
+.additional-information {
+    padding: 40px 0px;
+    font-size: 14px;
+    table {
+        tbody {
+            tr {
+                
+                height: 40px;
+                th {
+                    width: 90px;
+                }
+                td {
+                    color: var(--body-text);
+                }
+            }
+        }
+    }
+}

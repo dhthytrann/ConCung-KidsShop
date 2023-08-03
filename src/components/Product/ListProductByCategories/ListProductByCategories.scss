@@ -1,0 +1,58 @@
+@import "../../../assets/scss/media";
+
+.list-product-by-categories {
+    .tab-category {
+        transition: all 0.4s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid #e1e1e1;
+        padding: 15px 0px;
+        .item-tab {
+            position: relative;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            padding: 0px 20px;
+            p {
+                text-align: center;
+                font-weight: 700;
+                font-size: 17.5px;
+                color: var(--body-text);
+                transition: all 0.4s ease;
+                @include md{
+                    font-size: 20px;
+                }
+            }
+            &::after {
+                content: "";
+                transition: all 0.4s ease;
+                position: absolute;
+                bottom: -15px;
+                left: 50%;
+                transform: translate(-50%, 0%) scale(0);
+                width: 35%;
+                height: 5px;
+                background-color: var(--primary);
+                opacity: 0;
+            }
+            &:hover {
+                p {
+                    color: #222;
+                }
+                &::after {
+                    transform: translate(-50%, 0%) scale(1);
+                    opacity: 1;
+                }
+            }
+        }
+        .item-tab.active {
+            p {
+                color: #222;
+            }
+            &::after {
+                transform: translate(-50%, 0%) scale(1);
+                opacity: 1;
+            }
+        }
+    }
+}
